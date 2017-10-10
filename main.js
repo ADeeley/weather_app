@@ -26,12 +26,29 @@ function updateHTML(data) {
     //document.getElementById("weather_type").innerHTML = data["weather"][0]["main"];
     // Create weather html
     var header = document.createElement("h2");
-    var text = document.createTextNode(data["weather"][0]["main"]);
+    var text = document.createTextNode("Weather: " + data["weather"][0]["main"]);
     header.appendChild(text);
     header.id = "weather_type";
+    header.classList.add("data");
     document.body.appendChild(header);
     
-    // Create weather html
+    // Create temperature html
+    var header = document.createElement("h3");
+    var text = document.createTextNode("Temperature: " + data["main"]["temp"] + " Celsius");
+    header.appendChild(text);
+    header.id = "temperature";
+    header.classList.add("data");
+    document.body.appendChild(header);
+
+    // Create wind html
+    var header = document.createElement("h3");
+    var text = document.createTextNode("Wind Speed: " + data["wind"]["speed"] + " mph");
+    header.appendChild(text);
+    header.id = "temperature";
+    header.classList.add("data");
+    document.body.appendChild(header);
+
+    // Create icon 
     var icon = document.createElement("img");
     icon.id = "weather_icon";
     icon.src = data["weather"][0]["icon"]; 
