@@ -99,10 +99,12 @@ function changeScale() {
         num = toFahrenheit(num);
         document.getElementById("temperature").innerHTML = "Temperature: " + num + " Fahrenheit";
         isCelsius = false;
+        document.getElementById("scale").innerHTML = "Celsius";
     }
     else if (!isCelsius) {
         document.getElementById("temperature").innerHTML = "Temperature: " + num + " Celsius";
         isCelsius = true;
+        document.getElementById("scale").innerHTML = "Fahrenheit";
     }
     //Update HTML using DOM
 }
