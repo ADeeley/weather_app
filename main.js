@@ -40,7 +40,7 @@ function updateHTML(data) {
      */
     var text = "Weather: " + data["weather"][0]["main"];
     document.getElementById("weather_type").innerHTML = text;
-    text = "Temperature: " + data["main"]["temp"];
+    text = "Temperature: " + Math.floor(data["main"]["temp"]);
     document.getElementById("temperature").innerHTML = text + " Celsius";
     text = "Wind Speed: " + data["wind"]["speed"] + " mph";
     document.getElementById("wind_speed").innerHTML = text;
@@ -88,28 +88,21 @@ function adaptBackgroundColour(weatherType) {
     document.body.style = col;
 }
 
-function convertTempScale(num) {
-    if (isCelsius) {
-        return Math.floor((num * 1.8) + 32);
-    }
-    else if (!isCelsius) {
-        return (num - 32) ;
-    }
-    else {
-        return null;
-    }
+function toFahrenheit(num) {
+    return Math.floor((num * 1.8) + 32);
 }
 
 function changeScale() {
-    var num = JSONdata["main"]["temp"];
+    var num = Math.floor(JSONdata["main"]["temp"]);
+    var tempStr = "Temperature: " + num;
+
     if (isCelsius) {
-       num = convertTempScale(num);
-       document.getElementById("temperature").innerHTML = "Temperature: " + num + " Fahrenheit";
+        num = toFahrenheit(num);
+        document.getElementById("temperature").innerHTML = tempStr + " Fahrenheit";
         isCelsius = false;
     }
     else if (!isCelsius) {
-       num = convertTempScale(num);
-       document.getElementById("temperature").innerHTML = "Temperature: " + JSONdata["main"]["temp"] + " Celsius";
+        document.getElementById("temperature").innerHTML = "Temperature: " + num + " Celsius";
         isCelsius = true;
     }
     //Update HTML using DOM
