@@ -1,0 +1,30 @@
+body {
+    background-color: #abcdef;
+}
+button {
+    display: block;
+    margin: auto;
+    top: 100px;
+}
+
+.data {
+    font-size: 30px;
+    font-family: "Titan One";
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+#weather_icon {
+    display: block;
+    margin: auto;
+    width: 300px;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: "Titan One";
+    width: 500px;
+    margin: 50px auto 30px auto;
+    text-align: center;
+} 

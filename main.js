@@ -94,11 +94,10 @@ function toFahrenheit(num) {
 
 function changeScale() {
     var num = Math.floor(JSONdata["main"]["temp"]);
-    var tempStr = "Temperature: " + num;
 
     if (isCelsius) {
         num = toFahrenheit(num);
-        document.getElementById("temperature").innerHTML = tempStr + " Fahrenheit";
+        document.getElementById("temperature").innerHTML = "Temperature: " + num + " Fahrenheit";
         isCelsius = false;
     }
     else if (!isCelsius) {
