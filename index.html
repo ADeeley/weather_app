@@ -6,11 +6,15 @@
             body {
                 background-color: #abcdef;
             }
+            button {
+                display: block;
+                margin: auto;
+                top: 100px;
+            }
 
             .data {
                 font-size: 30px;
                 font-family: "Titan One";
-                background-color: #abcdef;
                 width: 500px;
                 margin: auto;
                 text-align: center;
@@ -25,7 +29,6 @@
             h1 {
                 font-size: 50px;
                 font-family: "Titan One";
-                background-color: #bbdee3;
                 width: 500px;
                 margin: 50px auto 30px auto;
                 text-align: center;
@@ -34,7 +37,11 @@
         </style>
         <script src="main.js"></script>
         <h1>Weather Near You</h1>
+        <h3 id="weather_type" class="data"></h3>
+        <h3 id="temperature" class="data"></h3>
+        <h3 id="wind_speed" class="data"></h3>
     </head>
     <body>
+        <button id="scale" onclick="changeScale()">Farenheit</button>
     </body>
 </html>
